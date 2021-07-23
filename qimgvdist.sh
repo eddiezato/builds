@@ -4,8 +4,7 @@ mkdir qimgv_w64
 cp ~/qimgv/build/qimgv/qimgv.exe ~/qimgv_w64/
 windeployqt ~/qimgv_w64/qimgv.exe --compiler-runtime --no-translations
 printf '\nCopy dependencies...\n'
-cp /mingw64/bin/{libavif.dll,\
-libbrotlicommon.dll,\
+cp /mingw64/bin/{libbrotlicommon.dll,\
 libbrotlidec.dll,\
 libbrotlienc.dll,\
 libbz2-1.dll,\
@@ -50,6 +49,7 @@ libzstd.dll,\
 tbb.dll,\
 zlib1.dll} ~/qimgv_w64/
 cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/qimgv_w64/
+cp ~/libavif/build/libavif.dll ~/YACReader_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/qimgv_w64/imageformats/
 cp ~/qt-avif-image-plugin/plugins/imageformats/qavif.dll ~/qimgv_w64/imageformats/
 printf 'Strip size...'

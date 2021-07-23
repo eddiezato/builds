@@ -1,6 +1,6 @@
 #!/bin/bash
 export CC=clang CXX=clang++
-#git clone https://github.com/xiph/flac.git --recursive
+git clone https://github.com/xiph/flac.git --recursive
 cd flac
 git pull
 rm -rf build
@@ -10,7 +10,6 @@ cmake -B build -G Ninja -S ./ \
     -DBUILD_EXAMPLES=OFF \
     -DBUILD_DOCS=OFF \
     -DINSTALL_MANPAGES=OFF \
-    -DFLAC__NO_DLL=ON \
     -DCMAKE_C_FLAGS='-ffunction-sections -fdata-sections' \
     -DCMAKE_CXX_FLAGS='-ffunction-sections -fdata-sections' \
     -DCMAKE_EXE_LINKER_FLAGS='-Wl,--gc-sections -Wl,--no-export-dynamic -fstack-protector-strong -static'
