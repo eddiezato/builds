@@ -3,7 +3,8 @@ rm -rf YACReader_w64
 mkdir YACReader_w64
 cp ~/yacreader/build/release64/YACReader.exe ~/YACReader_w64/
 windeployqt ~/YACReader_w64/YACReader.exe --compiler-runtime --no-translations
-rm -rf ~/YACReader_w64/{audio,bearer,mediaservice,playlistformats}
+rm -rf ~/YACReader_w64/{audio,bearer,playlistformats}
+rm -rf ~/YACReader_w64/mediaservice/qtmedia_audioengine.dll
 printf '\nCopy dependencies...\n'
 cp /mingw64/bin/{libbrotlicommon.dll,\
 libbrotlidec.dll,\
