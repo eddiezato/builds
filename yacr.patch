@@ -1,4 +1,4 @@
-Some changes for building with mingw, removing whats_new, and changing config file locations
+Some changes for building with mingw, removing whats_new, and relocating config files
 
 diff --git a/YACReader.pro b/YACReader.pro
 index f788b405..533957e0 100644
