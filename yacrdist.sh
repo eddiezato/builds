@@ -39,6 +39,9 @@ cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/YACReader_w64/
 cp ~/libavif/build/libavif.dll ~/YACReader_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/YACReader_w64/imageformats/
 cp ~/qt-avif-image-plugin/plugins/imageformats/qavif.dll ~/YACReader_w64/imageformats/
+curl -#O https://www.7-zip.org/a/7z2103-x64.exe
+7z e 7z2103-x64.exe -oYACReader_w64/utils/ 7z.dll
+rm -f 7z2103-x64.exe
 printf 'Strip size...'
 strip -s ~/YACReader_w64/*.{exe,dll}
 strip -s ~/YACReader_w64/imageformats/*.dll
