@@ -4,7 +4,7 @@ Scripts to compile some stuff with `msys2/mingw64`
 ---
 `avif.sh` - **good**
 
-`flac.sh` - *broken, can't build statically*
+`flac.sh` - **good**
 
 `jxl.sh` - **good**
 
