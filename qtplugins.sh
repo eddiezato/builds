@@ -1,13 +1,15 @@
 #!/bin/bash
 export CC=clang CXX=clang++
-#git clone https://github.com/novomesk/qt-avif-image-plugin.git --recursive
+rm -rf qt-avif-image-plugin
+git clone https://github.com/novomesk/qt-avif-image-plugin.git --recursive
 cd qt-avif-image-plugin
-rm -rf plugins
-git pull
-./build_libqavif_dynamic.sh 
+git apply ~/qtavifplugin.patch
+qmake "CONFIG += optimize_full" qt-avif-image-plugin.pro
+make -j 4
 cd ~
-#git clone https://github.com/novomesk/qt-jpegxl-image-plugin.git
+rm -rf qt-jpegxl-image-plugin
+git clone https://github.com/novomesk/qt-jpegxl-image-plugin.git
 cd qt-jpegxl-image-plugin
-rm -rf plugins
-git pull
-./build_libqjpegxl_dynamic.sh 
+git apply ~/qtjxlplugin.patch
+qmake "CONFIG += optimize_full" qt-jpegxl-image-plugin.pro
+make -j 4
