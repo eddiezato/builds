@@ -6,7 +6,6 @@ cd libavif/ext
 aomcmd=$(grep -i "git clone" aom.cmd)
 eval "$aomcmd"
 cd aom
-mkdir build.libavif
 cmake -B build.libavif -G Ninja -S ./ \
     -DCMAKE_BUILD_TYPE=Release \
     -DENABLE_DOCS=0 \
@@ -19,7 +18,6 @@ cmake -B build.libavif -G Ninja -S ./ \
     -DCMAKE_EXE_LINKER_FLAGS='-Wl,--gc-sections -Wl,--no-export-dynamic'
 ninja -C build.libavif
 cd ../..
-rm -rf build
 cmake -B build -G Ninja -S ./ \
     -DCMAKE_INSTALL_PREFIX=/mingw64 \
     -DCMAKE_BUILD_TYPE=Release \
