@@ -10,9 +10,9 @@ Scripts to compile some stuff with `msys2/mingw64`
 
 `mozjpeg.sh` - **good**
 
-`nomacs.sh` - *broken, the build fails*
-
 `qimgv.sh` - **good**
+
+`qv.sh` - **good**
 
 `qtplugins.sh` - **good**
 
