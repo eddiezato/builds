@@ -1,6 +1,6 @@
 #!/bin/bash
-rm -rf qimgv_w64
-mkdir qimgv_w64
+rm -rf ~/qimgv_w64
+mkdir ~/qimgv_w64
 cp ~/qimgv/build/qimgv/qimgv.exe ~/qimgv_w64/
 windeployqt ~/qimgv_w64/qimgv.exe --compiler-runtime --no-translations
 printf '\nCopy dependencies...\n'
@@ -51,5 +51,9 @@ cp ~/libavif/build/libavif.dll ~/qimgv_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/qimgv_w64/imageformats/
 cp ~/qt-avif-image-plugin/plugins/imageformats/qavif.dll ~/qimgv_w64/imageformats/
 printf 'Strip size...'
-strip -s ~/qimgv_w64/*.{exe,dll}
+strip -s ~/qimgv_w64/iconengines/*.dll
 strip -s ~/qimgv_w64/imageformats/*.dll
+strip -s ~/qimgv_w64/platforms/*.dll
+strip -s ~/qimgv_w64/printsupport/*.dll
+strip -s ~/qimgv_w64/styles/*.dll
+strip -s ~/qimgv_w64/*.{exe,dll}

@@ -1,6 +1,6 @@
 #!/bin/bash
-rm -rf YACReader_w64
-mkdir YACReader_w64
+rm -rf ~/YACReader_w64
+mkdir ~/YACReader_w64
 cp ~/yacreader/build/release64/YACReader.exe ~/YACReader_w64/
 windeployqt ~/YACReader_w64/YACReader.exe --compiler-runtime --no-translations
 rm -rf ~/YACReader_w64/{audio,bearer,playlistformats}
@@ -41,5 +41,9 @@ curl -#O https://www.7-zip.org/a/7z2103-x64.exe
 7z e 7z2103-x64.exe -oYACReader_w64/utils/ 7z.dll
 rm -f 7z2103-x64.exe
 printf 'Strip size...'
-strip -s ~/YACReader_w64/*.{exe,dll}
+strip -s ~/YACReader_w64/iconengines/*.dll
 strip -s ~/YACReader_w64/imageformats/*.dll
+strip -s ~/YACReader_w64/mediaservice/*.dll
+strip -s ~/YACReader_w64/platforms/*.dll
+strip -s ~/YACReader_w64/styles/*.dll
+strip -s ~/YACReader_w64/*.{exe,dll}
