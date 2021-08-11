@@ -1,0 +1,54 @@
+diff --git a/QVproject.pri b/QVproject.pri
+index f3ff93a..07d9636 100644
+--- a/QVproject.pri
++++ b/QVproject.pri
+@@ -1,5 +1,5 @@
+ ## Comment out if you don't need to change brightness/contrast/gamma support
+-DEFINES += QV_WITH_LUMINOR
++#DEFINES += QV_WITH_LUMINOR
+ 
+ ## Comment out if you need OpenGL support
+ DEFINES += QV_WITHOUT_OPENGL
+diff --git a/QVproject.pro b/QVproject.pro
+index 67cff56..843c78c 100644
+--- a/QVproject.pro
++++ b/QVproject.pro
+@@ -21,9 +21,9 @@ contains(DEFINES, QV_WITH_LUMINOR) {
+     QuickViewer.depends += luminor
+ }
+ 
+-win32 {
+-    SUBDIRS += AssociateFilesWithQuickViewer
+-}
++#win32 {
++#    SUBDIRS += AssociateFilesWithQuickViewer
++#}
+ 
+ unix {
+ #    SUBDIRS += zlib quazip Qt7z/lib7z/lib7z.pro
+diff --git a/QuickViewer/QuickViewer.pro b/QuickViewer/QuickViewer.pro
+index 21ebd18..dbde82d 100644
+--- a/QuickViewer/QuickViewer.pro
++++ b/QuickViewer/QuickViewer.pro
+@@ -72,8 +72,11 @@ win32 {
+     }
+     LIBS += -luser32 -ladvapi32 -lShlwapi -loleaut32 -lole32 -luuid
+ 
++    QMAKE_CFLAGS += -march=native -pipe
++    QMAKE_CXXFLAGS += -march=native -pipe
++
+     # copy official 7z.dll to build/bin/
+-    QMAKE_POST_LINK += $$QMAKE_COPY /B $$shell_quote($$shell_path($$PWD/../Qt7z/Qt7z/windll/$${TARGET_ARCH}/7z.dll)) $$shell_path($${DESTDIR})
++    # QMAKE_POST_LINK += $$QMAKE_COPY /B $$shell_quote($$shell_path($$PWD/../Qt7z/Qt7z/windll/$${TARGET_ARCH}/7z.dll)) $$shell_path($${DESTDIR})
+ }
+ linux {
+     DEFINES += _UNIX
+diff --git a/zimg/zimg/src/zimg/colorspace/matrix3.cpp b/zimg/zimg/src/zimg/colorspace/matrix3.cpp
+index 9f98bb5..eccc043 100644
+--- a/zimg/zimg/src/zimg/colorspace/matrix3.cpp
++++ b/zimg/zimg/src/zimg/colorspace/matrix3.cpp
+@@ -1,3 +1,4 @@
++#include <stddef.h>
+ #include "matrix3.h"
+ 
+ namespace zimg {
