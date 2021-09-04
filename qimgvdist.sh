@@ -51,6 +51,8 @@ cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/qimgv_w64/
 cp ~/libavif/build/libavif.dll ~/qimgv_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/qimgv_w64/imageformats/
 cp ~/qt-avif-image-plugin/plugins/imageformats/qavif.dll ~/qimgv_w64/imageformats/
+mkdir -p ~/qimgv_w64/mime/packages
+cp ~/libjxl/plugins/mime/image-jxl.xml ~/qimgv_w64/mime/packages/
 printf 'Strip size...'
 strip -s ~/qimgv_w64/iconengines/*.dll
 strip -s ~/qimgv_w64/imageformats/*.dll
