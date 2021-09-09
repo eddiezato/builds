@@ -4,6 +4,8 @@ Scripts to compile some stuff with `msys2/mingw64`
 ---
 `avif.sh` - **good**
 
+`exiv2.sh` - **good**
+
 `flac.sh` - **good**
 
 `jxl.sh` - **good**
