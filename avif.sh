@@ -2,7 +2,9 @@
 export CC=clang CXX=clang++
 rm -rf libavif
 git clone https://github.com/AOMediaCodec/libavif.git --recursive
-cd libavif/ext
+cd libavif
+cd ext
+rm -rf aom
 aomcmd=$(grep -i "git clone" aom.cmd)
 eval "$aomcmd"
 cd aom
@@ -18,6 +20,7 @@ cmake -B build.libavif -G Ninja -S ./ \
     -DCMAKE_EXE_LINKER_FLAGS='-Wl,--gc-sections -Wl,--no-export-dynamic'
 ninja -C build.libavif
 cd ../..
+rm -rf build
 cmake -B build -G Ninja -S ./ \
     -DCMAKE_INSTALL_PREFIX=/mingw64 \
     -DCMAKE_BUILD_TYPE=Release \
