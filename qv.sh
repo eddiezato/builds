@@ -9,7 +9,6 @@ rm -f 7z2103-src.7z
 cd quickviewer
 git apply ~/qv.patch
 git apply ~/qv7z.patch
-rm -rf build
 mkdir build
 cd build
 qmake "CONFIG += optimize_full" -o Makefile -recursive ../QVProject.pro

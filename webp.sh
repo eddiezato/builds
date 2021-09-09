@@ -3,7 +3,6 @@ export CC=clang CXX=clang++
 rm -rf libwebp
 git clone https://chromium.googlesource.com/webm/libwebp --recursive
 cd libwebp
-rm -rf build
 cmake -B build -G Ninja -S ./ \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_C_FLAGS='-ffunction-sections -fdata-sections -march=native -O3 -pipe' \

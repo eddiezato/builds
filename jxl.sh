@@ -4,7 +4,6 @@ rm -rf libjxl
 git clone https://github.com/libjxl/libjxl.git --recursive
 cd libjxl
 ./deps.sh
-rm -rf build
 cmake -B build -G Ninja -S ./ \
     -DCMAKE_INSTALL_PREFIX=/mingw64 \
     -DCMAKE_BUILD_TYPE=Release \
