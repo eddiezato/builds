@@ -7,6 +7,9 @@ rm -rf ~/YACReader_w64/{audio,bearer,playlistformats}
 rm -rf ~/YACReader_w64/mediaservice/qtmedia_audioengine.dll
 printf '\nCopy dependencies...\n'
 cp /mingw64/bin/{libbz2-1.dll,\
+libbrotlicommon.dll,\
+libbrotlidec.dll,\
+libbrotlienc.dll,\
 libdeflate.dll,\
 libdouble-conversion.dll,\
 libfreetype-6.dll,\
@@ -33,7 +36,6 @@ libwebpdemux-2.dll,\
 libwebpmux-3.dll,\
 libzstd.dll,\
 zlib1.dll} ~/YACReader_w64/
-cp ~/libjxl/build/third_party/brotli/{libbrotlicommon.dll,libbrotlidec.dll,libbrotlienc.dll} ~/YACReader_w64/
 cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/YACReader_w64/
 cp ~/libavif/build/libavif.dll ~/YACReader_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/YACReader_w64/imageformats/

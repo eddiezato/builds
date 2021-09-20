@@ -7,6 +7,9 @@ rm -f ~/QuickViewer_w64/sqldrivers/{qsqlibase.dll,qsqlmysql.dll}
 cp /mingw64/share/qt5/plugins/platforms/qdirect2d.dll ~/QuickViewer_w64/platforms/
 printf '\nCopy dependencies...\n'
 cp /mingw64/bin/{libbz2-1.dll,\
+libbrotlicommon.dll,\
+libbrotlidec.dll,\
+libbrotlienc.dll,\
 libdeflate.dll,\
 libdouble-conversion.dll,\
 libfreetype-6.dll,\
@@ -33,7 +36,6 @@ libwebpdemux-2.dll,\
 libwebpmux-3.dll,\
 libzstd.dll,\
 zlib1.dll} ~/QuickViewer_w64/
-cp ~/libjxl/build/third_party/brotli/{libbrotlicommon.dll,libbrotlidec.dll,libbrotlienc.dll} ~/QuickViewer_w64/
 cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/QuickViewer_w64/
 cp ~/libavif/build/libavif.dll ~/QuickViewer_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/QuickViewer_w64/imageformats/
