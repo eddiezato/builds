@@ -2,9 +2,8 @@
 export CC=clang CXX=clang++
 rm -rf libavif
 git clone https://github.com/AOMediaCodec/libavif.git --recursive
-cd libavif
+cd libavif/ext
 printf '\n:: Build aom ::\n'
-cd ext
 aomcmd=$(grep -i "git clone" aom.cmd)
 eval "$aomcmd"
 cd aom
