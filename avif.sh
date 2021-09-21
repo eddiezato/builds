@@ -31,6 +31,19 @@ CFLAGS='-ffunction-sections -fdata-sections -march=native -O3 -pipe' \
     meson --default-library=static --buildtype release ..
 cd ..
 ninja -C build
+cd ..
+printf '\n:: Build libyuv ::\n'
+git clone --single-branch https://chromium.googlesource.com/libyuv/libyuv
+yuvcmd=$(grep -i "git checkout" libyuv.cmd)
+cd libyuv
+eval "$yuvcmd"
+cmake -B build -G Ninja -S ./ \
+    -DBUILD_SHARED_LIBS=0 \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_C_FLAGS='-ffunction-sections -fdata-sections -march=native -O3 -pipe' \
+    -DCMAKE_CXX_FLAGS='-ffunction-sections -fdata-sections -march=native -O3 -pipe' \
+    -DCMAKE_EXE_LINKER_FLAGS='-Wl,--gc-sections -Wl,--no-export-dynamic'
+ninja -C build yuv
 cd ../..
 printf '\n:: Build libavif ::\n'
 cmake -B build -G Ninja -S ./ \
@@ -40,6 +53,7 @@ cmake -B build -G Ninja -S ./ \
     -DAVIF_LOCAL_AOM=ON \
     -DAVIF_CODEC_DAV1D=ON \
     -DAVIF_LOCAL_DAV1D=ON \
+    -DAVIF_LOCAL_LIBYUV=ON \
     -DAVIF_BUILD_APPS=ON \
     -DCMAKE_C_FLAGS='-ffunction-sections -fdata-sections -march=native -O3 -pipe' \
     -DCMAKE_CXX_FLAGS='-ffunction-sections -fdata-sections -march=native -O3 -pipe' \
