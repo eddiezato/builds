@@ -46,6 +46,7 @@ libunistring-2.dll,\
 libwebp-7.dll,\
 libwebpdemux-2.dll,\
 libwebpmux-3.dll,\
+libyuv.dll,\
 libzstd.dll,\
 tbb.dll,\
 zlib1.dll} ~/qimgv_w64/

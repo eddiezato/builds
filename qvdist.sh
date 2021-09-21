@@ -34,6 +34,7 @@ libtiff-5.dll,\
 libwebp-7.dll,\
 libwebpdemux-2.dll,\
 libwebpmux-3.dll,\
+libyuv.dll,\
 libzstd.dll,\
 zlib1.dll} ~/QuickViewer_w64/
 cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/QuickViewer_w64/
