@@ -1,7 +1,7 @@
 #!/bin/bash
 export CC=gcc CXX=g++
 rm -rf qimgv
-git clone https://github.com/easymodo/qimgv.git
+git clone --depth 1 https://github.com/easymodo/qimgv.git
 cd qimgv
 cmake -B build -G Ninja -S ./ \
     -DVIDEO_SUPPORT=OFF \

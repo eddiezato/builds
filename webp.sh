@@ -1,7 +1,7 @@
 #!/bin/bash
 export CC=clang CXX=clang++
 rm -rf libwebp
-git clone https://chromium.googlesource.com/webm/libwebp --recursive
+git clone --depth 1 https://chromium.googlesource.com/webm/libwebp
 cd libwebp
 cmake -B build -G Ninja -S ./ \
     -DCMAKE_BUILD_TYPE=Release \

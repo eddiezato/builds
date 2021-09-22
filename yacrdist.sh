@@ -37,7 +37,7 @@ libwebpmux-3.dll,\
 libzstd.dll,\
 zlib1.dll} ~/YACReader_w64/
 cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/YACReader_w64/
-cp ~/libavif/build/libavif.dll ~/YACReader_w64/
+cp ~/libavif/build.qavif/libavif.dll ~/YACReader_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/YACReader_w64/imageformats/
 cp ~/qt-avif-image-plugin/plugins/imageformats/qavif.dll ~/YACReader_w64/imageformats/
 curl -#O https://www.7-zip.org/a/7z2103-x64.exe

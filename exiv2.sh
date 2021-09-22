@@ -1,7 +1,7 @@
 #!/bin/bash
 export CC=clang CXX=clang++
 rm -rf exiv2
-git clone https://github.com/Exiv2/exiv2.git --recursive
+git clone --depth 1 https://github.com/Exiv2/exiv2.git
 cd exiv2
 cmake -B build -G Ninja -S ./ \
     -DCMAKE_INSTALL_PREFIX=/mingw64 \

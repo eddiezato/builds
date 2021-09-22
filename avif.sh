@@ -1,11 +1,11 @@
 #!/bin/bash
 export CC=clang CXX=clang++
 rm -rf libavif
-git clone https://github.com/AOMediaCodec/libavif.git --recursive
+git clone --depth 1 https://github.com/AOMediaCodec/libavif.git
 cd libavif/ext
 printf '\n:: Build aom ::\n'
-aomcmd=$(grep -i "git clone" aom.cmd)
-eval "$aomcmd"
+branch=($(grep -i "git clone" aom.cmd))
+git clone -b ${branch[3]} --depth 1 https://aomedia.googlesource.com/aom
 cd aom
 cmake -B build.libavif -G Ninja -S ./ \
     -DCMAKE_BUILD_TYPE=Release \
@@ -20,8 +20,8 @@ cmake -B build.libavif -G Ninja -S ./ \
 ninja -C build.libavif
 cd ..
 printf '\n:: Build dav1d ::\n'
-dav1dcmd=$(grep -i "git clone" dav1d.cmd)
-eval "$dav1dcmd"
+branch=($(grep -i "git clone" dav1d.cmd))
+git clone -b ${branch[3]} --depth 1 https://code.videolan.org/videolan/dav1d.git
 cd dav1d
 mkdir build
 cd build
@@ -33,10 +33,8 @@ cd ..
 ninja -C build
 cd ..
 printf '\n:: Build libyuv ::\n'
-git clone --single-branch https://chromium.googlesource.com/libyuv/libyuv
-yuvcmd=$(grep -i "git checkout" libyuv.cmd)
+git clone --depth 1 https://chromium.googlesource.com/libyuv/libyuv
 cd libyuv
-eval "$yuvcmd"
 cmake -B build -G Ninja -S ./ \
     -DBUILD_SHARED_LIBS=0 \
     -DCMAKE_BUILD_TYPE=Release \
