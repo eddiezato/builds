@@ -17,6 +17,7 @@ libexpat-1.dll,\
 libfreetype-6.dll,\
 libgfortran-5.dll,\
 libglib-2.0-0.dll,\
+libgomp-1.dll,\
 libgraphite2.dll,\
 libharfbuzz-0.dll,\
 libiconv-2.dll,\
@@ -28,6 +29,7 @@ libintl-8.dll,\
 libjasper-4.dll,\
 libjbig-0.dll,\
 libjpeg-8.dll,\
+liblcms2-2.dll,\
 liblzma-5.dll,\
 libmd4c.dll,\
 libnghttp2-14.dll,\
@@ -39,6 +41,7 @@ libpcre2-16-0.dll,\
 libpng16-16.dll,\
 libpsl-5.dll,\
 libquadmath-0.dll,\
+libraw-20.dll,\
 libssh2-1.dll,\
 libssl-1_1-x64.dll,\
 libtiff-5.dll,\
@@ -53,8 +56,9 @@ cp ~/libjxl/build/{libjxl.dll,libjxl_threads.dll} ~/qimgv_w64/
 cp ~/libavif/build.qavif/libavif.dll ~/qimgv_w64/
 cp ~/qt-jpegxl-image-plugin/plugins/imageformats/qjpegxl.dll ~/qimgv_w64/imageformats/
 cp ~/qt-avif-image-plugin/plugins/imageformats/qavif.dll ~/qimgv_w64/imageformats/
-mkdir -p ~/qimgv_w64/mime/packages
-cp ~/libjxl/plugins/mime/image-jxl.xml ~/qimgv_w64/mime/packages/
+cp ~/qtraw/build/src/imageformats/qtraw.dll ~/qimgv_w64/imageformats/
+mkdir -p ~/qimgv_w64/data/mime/packages
+cp ~/libjxl/plugins/mime/image-jxl.xml ~/qimgv_w64/data/mime/packages/
 printf 'Strip size...'
 strip -s ~/qimgv_w64/iconengines/*.dll
 strip -s ~/qimgv_w64/imageformats/*.dll
