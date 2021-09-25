@@ -11,6 +11,7 @@ Scripts to compile some stuff with `msys2/mingw64`
 |qt-avif-image-plugin|✔|
 |qimgv|✔|
 |qt-jpegxl-image-plugin|✔|
+|qtraw|✔|
 |QuickViewer|✔|
 |libwebp|✔|
 |YACReader|✔|
